@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imgbg1"
+        android:layout_width="3000dp"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="-48dp"
+        android:background="@drawable/bg1"
+        android:src="@drawable/bg1" />
+
+    <ImageView
+        android:id="@+id/img_logo1"
+        android:layout_width="120dp"
+        android:layout_height="41dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/logo1" />
+
+    <ImageView
+        android:id="@+id/btnbacklogin"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="370dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/logout" />
+
+
+    <ImageView
+        android:id="@+id/imgbg2"
+        android:layout_width="wrap_content"
+        android:layout_height="160dp"
+        android:layout_below="@id/imgbg1"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/bg2" />
+
+    <TextView
+        android:id="@+id/TVHalo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="90dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Halo,"
+        android:textColor="#FFFFFF"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/profil"
+        android:layout_width="81dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/hansel" />
+
+    <TextView
+        android:id="@+id/TvKata"
+        android:layout_width="211dp"
+        android:layout_height="52dp"
+        android:layout_below="@+id/TVHalo"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="5dp"
+        android:text="Cek kondisi kualitas air, dan pastikan ikan tidak kelaparan"
+        android:textColor="#FFFFFF"
+        android:textSize="16dp" />
+
+    <ImageView
+        android:id="@+id/monitoring"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_below="@+id/imgbg1"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/monitoring" />
+
+    <ImageView
+        android:id="@+id/controling"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_below="@+id/imgbg1"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/control" />
+
+</RelativeLayout>

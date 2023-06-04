@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#050A30"
+    tools:context=".MonitoringActivity">
+
+    <ImageView
+        android:id="@+id/img_back"
+        android:layout_width="45dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_back" />
+
+    <TextView
+        android:id="@+id/katamonitoring"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
+        android:text="Monitoring"
+        android:textColor="#FFFFFF"
+        android:textSize="28dp"
+        android:textStyle="bold"/>
+
+    <ImageView
+        android:id="@+id/bgptk"
+        android:layout_width="165dp"
+        android:layout_height="165dp"
+        android:layout_below="@+id/katamonitoring"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/bgpt" />
+
+    <ImageView
+        android:id="@+id/suhu"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/katamonitoring"
+        android:layout_gravity="top"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="70dp"
+        android:src="@drawable/suhu" />
+    <TextView
+        android:id="@+id/txtsuhu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/suhu"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="5dp"
+        android:text="Suhu Air"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:fontFamily="sans-serif"
+        />
+    <TextView
+        android:id="@+id/txtC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtsuhu"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="5dp"
+        android:text="28°C"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/txtsuhuket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtC"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="5dp"
+        android:text="Air Dingin"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:fontFamily="sans-serif"
+        />
+
+    <ImageView
+        android:id="@+id/bgptk2"
+        android:layout_width="165dp"
+        android:layout_height="165dp"
+        android:layout_below="@+id/katamonitoring"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/bgpt" />
+    <ImageView
+        android:id="@+id/ph"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/katamonitoring"
+        android:layout_gravity="top"
+        android:layout_marginStart="283dp"
+        android:layout_marginTop="70dp"
+        android:src="@drawable/ph" />
+    <TextView
+        android:id="@+id/txtph"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/suhu"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="5dp"
+        android:text="pH Air"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:fontFamily="sans-serif"
+        />
+    <TextView
+        android:id="@+id/txtPH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtsuhu"
+        android:layout_marginStart="290dp"
+        android:layout_marginTop="5dp"
+        android:text="6,5"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/txtphket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtC"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="5dp"
+        android:text="pH Normal"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:fontFamily="sans-serif"
+        />
+
+    <ImageView
+        android:id="@+id/bgptk3"
+        android:layout_width="165dp"
+        android:layout_height="165dp"
+        android:layout_below="@+id/bgptk"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/bgpt" />
+    <ImageView
+        android:id="@+id/tds"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/txtsuhuket"
+        android:layout_gravity="top"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="70dp"
+        android:src="@drawable/kebersihan" />
+    <TextView
+        android:id="@+id/txttds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tds"
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="10dp"
+        android:text="Kekeruhan Air"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:fontFamily="sans-serif"
+        />
+    <TextView
+        android:id="@+id/tdsket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txttds"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="10dp"
+        android:text="Air Jernih"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/bgptk4"
+        android:layout_width="165dp"
+        android:layout_height="165dp"
+        android:layout_below="@+id/bgptk2"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/bgpt" />
+    <ImageView
+        android:id="@+id/makan"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/txtphket"
+        android:layout_gravity="top"
+        android:layout_marginStart="283dp"
+        android:layout_marginTop="70dp"
+        android:src="@drawable/pakan" />
+
+    <TextView
+        android:id="@+id/txtmakan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/makan"
+        android:layout_marginStart="240dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="sans-serif"
+        android:text="Ketersediaan Pakan"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        tools:ignore="TextSizeCheck" />
+    <TextView
+        android:id="@+id/txtangkamakan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtmakan"
+        android:layout_marginStart="276dp"
+        android:layout_marginTop="5dp"
+        android:text="15 Cm"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtmakanket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtangkamakan"
+        android:layout_marginStart="244dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="sans-serif"
+        android:text="Pakan Mau Habis"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        tools:ignore="TextSizeCheck" />
+</RelativeLayout>
