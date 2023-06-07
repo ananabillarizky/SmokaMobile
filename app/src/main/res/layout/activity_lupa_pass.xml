@@ -9,6 +9,14 @@
     tools:context=".lupaPassActivity">
 
     <ImageView
+        android:id="@+id/img_backlogin"
+        android:layout_width="45dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_back" />
+
+    <ImageView
         android:id="@+id/img_logo2"
         android:layout_width="120dp"
         android:layout_height="120dp"

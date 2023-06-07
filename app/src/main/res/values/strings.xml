@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">SmoKa</string>
+    <string-array name="time_array">
+        <item>08:00 AM</item>
+        <item>09:00 AM</item>
+        <!-- Tambahkan pilihan waktu lainnya sesuai kebutuhan -->
+    </string-array>
 </resources>

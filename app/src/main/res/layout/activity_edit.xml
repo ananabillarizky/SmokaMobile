@@ -14,5 +14,26 @@
         android:layout_marginTop="10dp"
         android:src="@drawable/back" />
 
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:text="Time"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="136dp"
+        android:layout_height="65dp"
+        android:layout_below="@+id/tv_time"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="19dp"
+        android:onClick="onSaveButtonClicked"
+        android:text="Save" />
+
 
 </RelativeLayout>
