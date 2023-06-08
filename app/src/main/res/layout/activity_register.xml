@@ -28,27 +28,27 @@
         android:textStyle="bold"
         />
 
-    <EditText
-        android:id="@+id/userET"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_regis"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="#D2264C"
-        android:drawableLeft="@drawable/ic_person"
-        android:drawablePadding="8dp"
-        android:hint="Username"
-        android:inputType="textEmailAddress"
-        android:paddingBottom="30dp"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#F4F7F7" />
+<!--    <EditText-->
+<!--        android:id="@+id/userET"-->
+<!--        android:layout_width="300dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/tv_regis"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:backgroundTint="#D2264C"-->
+<!--        android:drawableLeft="@drawable/ic_person"-->
+<!--        android:drawablePadding="8dp"-->
+<!--        android:hint="Username"-->
+<!--        android:inputType="textEmailAddress"-->
+<!--        android:paddingBottom="30dp"-->
+<!--        android:textColor="#FFFFFF"-->
+<!--        android:textColorHint="#F4F7F7" />-->
 
     <EditText
         android:id="@+id/emailET"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/userET"
+        android:layout_below="@+id/tv_regis"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:backgroundTint="#D2264C"
@@ -121,7 +121,7 @@
             />
 
         <TextView
-            android:id="@+id/tv_register"
+            android:id="@+id/btn_to_signIn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="7dp"

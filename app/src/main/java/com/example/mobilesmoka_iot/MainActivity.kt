@@ -7,17 +7,29 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.TextView
+import com.example.mobilesmoka_iot.`object`.FirebaseUtils
+import com.example.mobilesmoka_iot.`object`.FirebaseUtils.firebaseAuth
+import com.google.firebase.FirebaseApp
+import com.google.firebase.auth.FirebaseUser
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var btnbacklogin: ImageView
+    private lateinit var btnbacklogin: TextView
+    private lateinit var tvHalo: TextView
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val user: FirebaseUser? = FirebaseUtils.firebaseAuth.currentUser
+        tvHalo = findViewById(R.id.TVHalo)
+        if(user != null){
+            tvHalo.setText("Halo, " + user.email!!.substring(0, user.email!!.indexOf("@")))
+        }
+
 
         //button back ke login
-        btnbacklogin = findViewById(R.id.btnbacklogin)
+        btnbacklogin = findViewById(R.id.logout)
         btnbacklogin.setOnClickListener {
             showLogoutConfirmationDialog()
         }
@@ -35,6 +47,9 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, MonitoringActivity::class.java)
             startActivity(intent)
         }
+
+        // Initialize Firebase
+        FirebaseApp.initializeApp(this)
     }
 
     private fun showLogoutConfirmationDialog() {
@@ -53,6 +68,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun logout() {
+        firebaseAuth.signOut()
         // Kode untuk logout di sini
     }
 

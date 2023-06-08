@@ -8,11 +8,23 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.mobilesmoka_iot.`object`.Extension.toast
+import com.example.mobilesmoka_iot.`object`.FirebaseUtils.firebaseAuth
+import com.google.firebase.auth.FirebaseUser
+
 
 class LoginActivity : AppCompatActivity() {
+
+    lateinit var signInEmail: String
+    lateinit var signInPassword: String
+    lateinit var signInInputsArray: Array<EditText>
+    private lateinit var emailEdt: EditText
+    private lateinit var passwordEdt: EditText
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        emailEdt = findViewById(R.id.emailET)
+        passwordEdt = findViewById(R.id.passwordET)
 //klik regis
         val tv_register = findViewById<TextView>(R.id.tv_register)
         tv_register.setOnClickListener {
@@ -29,6 +41,7 @@ class LoginActivity : AppCompatActivity() {
         val passwordET = findViewById<EditText>(R.id.passwordET)
         val IV_eye = findViewById<ImageView>(R.id.IV_eye)
         IV_eye.setOnClickListener {
+            passwordET.text
             val currentInputType = passwordET.inputType
             if (currentInputType == InputType.TYPE_TEXT_VARIATION_PASSWORD) {
                 passwordET.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
@@ -46,6 +59,51 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        signInInputsArray = arrayOf(emailEdt, passwordEdt)
+        tv_register.setOnClickListener {
+            startActivity(Intent(this, RegisterActivity::class.java))
+            finish()
+        }
 
+        loginButton.setOnClickListener {
+            signInUser()
+        }
+
+
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val user: FirebaseUser? = firebaseAuth.currentUser
+        user?.let {
+            startActivity(Intent(this, MainActivity::class.java))
+            toast("welcome back")
+        }
+    }
+
+    private fun notEmpty(): Boolean = signInEmail.isNotEmpty() && signInPassword.isNotEmpty()
+
+    private fun signInUser() {
+        signInEmail = emailEdt.text.toString().trim()
+        signInPassword = passwordEdt.text.toString().trim()
+
+        if (notEmpty()) {
+            firebaseAuth.signInWithEmailAndPassword(signInEmail, signInPassword)
+                .addOnCompleteListener { signIn ->
+                    if (signIn.isSuccessful) {
+                        startActivity(Intent(this, MainActivity::class.java))
+                        toast("signed in successfully")
+                        finish()
+                    } else {
+                        toast("sign in failed")
+                    }
+                }
+        } else {
+            signInInputsArray.forEach { input ->
+                if (input.text.toString().trim().isEmpty()) {
+                    input.error = "${input.hint} is required"
+                }
+            }
+        }
     }
 }

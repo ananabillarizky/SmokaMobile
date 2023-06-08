@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#050A30"
-    tools:context=".LoginActivity">
+    tools:context=".LoginActivity"
+    tools:ignore="ExtraText">
 
     <ImageView
         android:id="@+id/img_logo2"
@@ -43,6 +44,39 @@
         android:paddingBottom="30dp"
         android:textColor="#FFFFFF"
         android:textColorHint="#F4F7F7" />
+
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:id="@+id/passwordET"-->
+<!--        android:layout_width="300dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/emailET"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        app:hintTextAppearance="@style/TextAppearance.AppCompat.Large"-->
+<!--        android:backgroundTint="#D2264C"-->
+<!--        android:drawableStart="@drawable/ic_key"-->
+<!--        android:drawablePadding="10dp"-->
+<!--        android:hint="@string/password"-->
+<!--        android:inputType="textPassword"-->
+<!--        android:paddingBottom="30dp"-->
+<!--        android:textColor="#FFFFFF"-->
+<!--        android:textColorHint="#F4F7F7"-->
+<!--        app:passwordToggleTint="@color/black"-->
+
+<!--    android:scrollbarSize="25dp">-->
+
+<!--    &lt;!&ndash;Using the TextInputEditText,which is-->
+<!--        same as the edit text,but remember&ndash;&gt;-->
+<!--    &lt;!&ndash;that we need to use TextInputEditText-->
+<!--        with TextInputLayout&ndash;&gt;-->
+<!--    <com.google.android.material.textfield.TextInputEditText-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:textSize="20dp"-->
+<!--        android:inputType="textPassword"-->
+<!--        android:ems="15"/>-->
+
+<!--</com.google.android.material.textfield.TextInputLayout>-->
 
     <EditText
         android:id="@+id/passwordET"
