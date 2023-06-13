@@ -98,9 +98,9 @@
         android:id="@+id/IV_eye"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="320dp"
-        android:layout_marginTop="390dp"
-        android:src="@drawable/ic_eye" />
+        android:layout_marginStart="310dp"
+        android:layout_marginTop="385dp"
+        android:src="@drawable/ic_eye_off" />
 
     <TextView
         android:id="@+id/tv_Fpassword"
@@ -110,10 +110,11 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="53dp"
+        android:clickable="true"
         android:text="Lupa Password?"
         android:textColor="@color/white"
-        android:clickable="true"
-        android:textSize="15dp" />
+        android:textSize="15dp"
+        tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
 
     <Button
         android:id="@+id/loginButton"
@@ -151,6 +152,7 @@
             android:clickable="true"
             android:text="Daftar disini"
             android:textColor="#D2264C"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:ignore="TouchTargetSizeCheck" />
     </RelativeLayout>
 </RelativeLayout>

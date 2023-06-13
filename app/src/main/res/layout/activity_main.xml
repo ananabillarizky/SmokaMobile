@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="#F0F5F8"
     tools:context=".MainActivity">
 
 
@@ -28,10 +28,10 @@
 
     <ImageView
         android:id="@+id/btnbacklogin"
-        android:layout_width="48dp"
+        android:layout_width="40dp"
         android:layout_height="48dp"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="370dp"
+        android:layout_marginStart="350dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/logout" />
 

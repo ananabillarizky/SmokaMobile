@@ -37,7 +37,7 @@ class JadwalActivity : AppCompatActivity() {
 
             TimePickerDialog(this,TimePickerDialog.OnTimeSetListener { view, hourofDay, minute ->
                 tvtime1 .setText("$hourofDay : $minute")
-            }, startHour,startMinute, false).show()
+            }, startHour,startMinute, true).show()
         }
 
         tvtime2  = findViewById(R.id.tvtime2)
@@ -50,7 +50,7 @@ class JadwalActivity : AppCompatActivity() {
 
             TimePickerDialog(this,TimePickerDialog.OnTimeSetListener { view, hourofDay, minute ->
                 tvtime2 .setText("$hourofDay : $minute")
-            }, startHour,startMinute, false).show()
+            }, startHour,startMinute, true).show()
         }
 
         tvtime3  = findViewById(R.id.tvtime3)
@@ -62,7 +62,7 @@ class JadwalActivity : AppCompatActivity() {
 
             TimePickerDialog(this,TimePickerDialog.OnTimeSetListener { view, hourofDay, minute ->
                 tvtime3 .setText("$hourofDay : $minute")
-            }, startHour,startMinute, false).show()
+            }, startHour,startMinute, true).show()
         }
 
         val img_back = findViewById<ImageView>(R.id.img_back)

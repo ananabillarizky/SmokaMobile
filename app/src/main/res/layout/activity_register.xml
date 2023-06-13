@@ -75,6 +75,13 @@
         android:paddingBottom="30dp"
         android:textColor="#FFFFFF"
         android:textColorHint="#F4F7F7" />
+    <ImageView
+        android:id="@+id/IV_eye1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="310dp"
+        android:layout_marginTop="350dp"
+        android:src="@drawable/ic_eye_off" />
 
     <EditText
         android:id="@+id/ETconfrim"
@@ -91,6 +98,13 @@
         android:inputType="textPassword"
         android:paddingBottom="30dp"
         android:textColorHint="#F4F7F7" />
+    <ImageView
+        android:id="@+id/IV_eye2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="310dp"
+        android:layout_marginTop="420dp"
+        android:src="@drawable/ic_eye_off" />
 
     <Button
         android:id="@+id/btnregis"

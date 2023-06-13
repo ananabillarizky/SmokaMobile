@@ -8,9 +8,11 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import com.example.mobilesmoka_iot.`object`.Extension.toast
 import com.example.mobilesmoka_iot.`object`.FirebaseUtils.firebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import kotlin.math.log
 
 
 class LoginActivity : AppCompatActivity() {
@@ -40,16 +42,22 @@ class LoginActivity : AppCompatActivity() {
 //showpass
         val passwordET = findViewById<EditText>(R.id.passwordET)
         val IV_eye = findViewById<ImageView>(R.id.IV_eye)
+        var isPasswordVisible = false
         IV_eye.setOnClickListener {
-            passwordET.text
-            val currentInputType = passwordET.inputType
-            if (currentInputType == InputType.TYPE_TEXT_VARIATION_PASSWORD) {
-                passwordET.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+            if (!isPasswordVisible) {
+                // Mengubah tampilan password menjadi tersembunyi
+                passwordET.inputType =
+                    InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
                 IV_eye.setImageResource(R.drawable.ic_eye_off)
             } else {
-                passwordET.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+                // Mengubah tampilan password menjadi terlihat
+                passwordET.inputType =
+                    InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
                 IV_eye.setImageResource(R.drawable.ic_eye)
             }
+            isPasswordVisible = !isPasswordVisible
+
+            // Mengatur kursor ke posisi akhir teks
             passwordET.setSelection(passwordET.text.length)
         }
         ///test masuk ke main activity
@@ -77,7 +85,7 @@ class LoginActivity : AppCompatActivity() {
         val user: FirebaseUser? = firebaseAuth.currentUser
         user?.let {
             startActivity(Intent(this, MainActivity::class.java))
-            toast("welcome back")
+            toast("Selamat Datang Kembali")
         }
     }
 
@@ -92,16 +100,16 @@ class LoginActivity : AppCompatActivity() {
                 .addOnCompleteListener { signIn ->
                     if (signIn.isSuccessful) {
                         startActivity(Intent(this, MainActivity::class.java))
-                        toast("signed in successfully")
+                        toast("Login Sukses")
                         finish()
                     } else {
-                        toast("sign in failed")
+                        toast("Login Gagal")
                     }
                 }
         } else {
             signInInputsArray.forEach { input ->
                 if (input.text.toString().trim().isEmpty()) {
-                    input.error = "${input.hint} is required"
+                    input.error = "${input.hint} dibutuhkan"
                 }
             }
         }

@@ -1,41 +1,41 @@
 {
   "project_info": {
-    "project_number": "920897293041",
-    "project_id": "smoka-iot",
-    "storage_bucket": "smoka-iot.appspot.com"
+    "project_number": "236584962939",
+    "project_id": "smoka-iot-a3fc3",
+    "storage_bucket": "smoka-iot-a3fc3.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:920897293041:android:664e1d50613f7d08cc3750",
+        "mobilesdk_app_id": "1:236584962939:android:e3d5ca25d747e57c05cbde",
         "android_client_info": {
           "package_name": "com.example.mobilesmoka_iot"
         }
       },
       "oauth_client": [
         {
-          "client_id": "920897293041-ig90scs3ggajfr1f6an6h437jeu9vdnt.apps.googleusercontent.com",
+          "client_id": "236584962939-has628f50jmvoso5hpr526tsqlsrs7gh.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.mobilesmoka_iot",
-            "certificate_hash": "0be3f78a7a4593aa12a1bd819e026373043f55c1"
+            "certificate_hash": "fa6917bb2f6bde257b48fe1a188de23545fb9e33"
           }
         },
         {
-          "client_id": "920897293041-elk4s6rfvkuu14nsv30n1sg4dmcr0ip8.apps.googleusercontent.com",
+          "client_id": "236584962939-c6cl5f588bc9ijt59apvck6drl7ucimu.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD51uMRqJZnHLXNQ80rpTAU9UDWs_WibOo"
+          "current_key": "AIzaSyC0p3zbu1Tiq3Po1tBmaPSuTZBBZZ_H2E4"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "920897293041-elk4s6rfvkuu14nsv30n1sg4dmcr0ip8.apps.googleusercontent.com",
+              "client_id": "236584962939-c6cl5f588bc9ijt59apvck6drl7ucimu.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
