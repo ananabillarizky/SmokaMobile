@@ -7,186 +7,66 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.*
-import com.google.firebase.firestore.FirebaseFirestore
-import java.util.Calendar
+import com.google.firebase.database.FirebaseDatabase
+import java.util.*
 
 class JadwalActivity : AppCompatActivity() {
-    private lateinit var tvtime1 : TextView
-    private lateinit var editButton : Button
-    private lateinit var saveButton : Button
+    private lateinit var tvtime1: TextView
+    private lateinit var editButton: Button
+    private lateinit var saveButton: Button
 
-    private lateinit var tvtime2 : TextView
-    private lateinit var editButton2 : Button
-    private lateinit var saveButton2 : Button
+    private lateinit var tvtime2: TextView
+    private lateinit var editButton2: Button
+    private lateinit var saveButton2: Button
 
-    private lateinit var tvtime3 : TextView
-    private lateinit var editButton3 : Button
-    private lateinit var saveButton3 : Button
-    private lateinit var firestore: FirebaseFirestore
+    private lateinit var tvtime3: TextView
+    private lateinit var editButton3: Button
+    private lateinit var saveButton3: Button
+
+    private val database = FirebaseDatabase.getInstance()
+    private val KontrolRef = database.reference.child("Kontrol")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_jadwal)
 
-        firestore = FirebaseFirestore.getInstance()
-        // Mendapatkan referensi dokumen dari Firestore
-        val jadwalPakanRef = firestore.collection("jadwal_pakan")
-
-        tvtime1  = findViewById(R.id.tvtime1)
-        editButton = findViewById(R.id.editButton )
+        tvtime1 = findViewById(R.id.tvtime1)
+        editButton = findViewById(R.id.editButton)
         saveButton = findViewById(R.id.saveButton)
 
+        tvtime2 = findViewById(R.id.tvtime2)
+        editButton2 = findViewById(R.id.editButton2)
+        saveButton2 = findViewById(R.id.saveButton2)
 
+        tvtime3 = findViewById(R.id.tvtime3)
+        editButton3 = findViewById(R.id.editButton3)
+        saveButton3 = findViewById(R.id.saveButton3)
 
-        // Mendapatkan data dari Firestore
-        jadwalPakanRef.document("jadwal_pakan1").get()
-            .addOnSuccessListener { document ->
-                if (document.exists()) {
-                    // Dokumen ada, ambil nilai properti "time" dari dokumen
-                    val timeValue = document.getString("time")
-
-                    // Atur nilai timeValue ke tvTime
-                    tvtime1.text = timeValue
-                } else {
-                    // Dokumen tidak ditemukan, atur nilai default "00:00" ke tvTime
-                    tvtime1.text = "00:00"
-                }
-            }
-            .addOnFailureListener { exception ->
-                // Gagal mengambil data dari Firestore, tampilkan pesan kesalahan
-                Toast.makeText(this, "Gagal mengambil data dari Firestore: ${exception.message}", Toast.LENGTH_SHORT).show()
-            }
-
-
-        editButton.setOnClickListener{
-            val currentTime = Calendar.getInstance()
-            val startHour = currentTime.get(Calendar.HOUR_OF_DAY)
-            val startMinute = currentTime.get(Calendar.MINUTE)
-
-            TimePickerDialog(this,TimePickerDialog.OnTimeSetListener { view, hourofDay, minute ->
-                tvtime1 .setText("$hourofDay : $minute")
-            }, startHour,startMinute, true).show()
+        editButton.setOnClickListener {
+            showTimePickerDialog(tvtime1)
         }
 
         saveButton.setOnClickListener {
             val timeValue = tvtime1.text.toString()
-
-        // Simpan nilai tvtime ke Firestore
-            val jadwalPakanRef = firestore.collection("jadwal_pakan").document("jadwal_pakan1")
-            val data = hashMapOf("time" to timeValue)
-            Log.d("Cek",data.toString());
-
-            jadwalPakanRef.set(data)
-                .addOnSuccessListener {
-                    Toast.makeText(this, "Nilai berhasil disimpan di Firestore", Toast.LENGTH_SHORT).show()
-                }
-                .addOnFailureListener {
-                    Toast.makeText(this, "Gagal menyimpan nilai di Firestore", Toast.LENGTH_SHORT).show()
-                }
-
+            saveDataToFirebase("waktu", timeValue)
         }
 
-        tvtime2  = findViewById(R.id.tvtime2)
-        editButton2 = findViewById(R.id.editButton2 )
-        saveButton2 = findViewById(R.id.saveButton2)
-
-        // Mendapatkan data dari Firestore
-        jadwalPakanRef.document("jadwal_pakan2").get()
-            .addOnSuccessListener { document ->
-                if (document.exists()) {
-                    // Dokumen ada, ambil nilai properti "time" dari dokumen
-                    val timeValue = document.getString("time")
-
-                    // Atur nilai timeValue ke tvTime
-                    tvtime2.text = timeValue
-                } else {
-                    // Dokumen tidak ditemukan, atur nilai default "00:00" ke tvTime
-                    tvtime2.text = "00:00"
-                }
-            }
-            .addOnFailureListener { exception ->
-                // Gagal mengambil data dari Firestore, tampilkan pesan kesalahan
-                Toast.makeText(this, "Gagal mengambil data dari Firestore: ${exception.message}", Toast.LENGTH_SHORT).show()
-            }
-
-        editButton2.setOnClickListener{
-            val currentTime = Calendar.getInstance()
-            val startHour = currentTime.get(Calendar.HOUR_OF_DAY)
-            val startMinute = currentTime.get(Calendar.MINUTE)
-
-            TimePickerDialog(this,TimePickerDialog.OnTimeSetListener { view, hourofDay, minute ->
-                tvtime2 .setText("$hourofDay : $minute")
-            }, startHour,startMinute, true).show()
+        editButton2.setOnClickListener {
+            showTimePickerDialog(tvtime2)
         }
 
         saveButton2.setOnClickListener {
             val timeValue = tvtime2.text.toString()
-
-            // Simpan nilai tvtime ke Firestore
-            val jadwalPakanRef = firestore.collection("jadwal_pakan").document("jadwal_pakan2")
-            val data = hashMapOf("time" to timeValue)
-            Log.d("Cek",data.toString());
-
-            jadwalPakanRef.set(data)
-                .addOnSuccessListener {
-                    Toast.makeText(this, "Nilai berhasil disimpan di Firestore", Toast.LENGTH_SHORT).show()
-                }
-                .addOnFailureListener {
-                    Toast.makeText(this, "Gagal menyimpan nilai di Firestore", Toast.LENGTH_SHORT).show()
-                }
-
+            saveDataToFirebase("waktu2", timeValue)
         }
 
-        tvtime3  = findViewById(R.id.tvtime3)
-        editButton3 = findViewById(R.id.editButton3 )
-        saveButton3 = findViewById(R.id.saveButton3)
-
-        // Mendapatkan data dari Firestore
-        jadwalPakanRef.document("jadwal_pakan3").get()
-            .addOnSuccessListener { document ->
-                if (document.exists()) {
-                    // Dokumen ada, ambil nilai properti "time" dari dokumen
-                    val timeValue = document.getString("time")
-
-                    // Atur nilai timeValue ke tvTime
-                    tvtime3.text = timeValue
-                } else {
-                    // Dokumen tidak ditemukan, atur nilai default "00:00" ke tvTime
-                    tvtime3.text = "00:00"
-                }
-            }
-            .addOnFailureListener { exception ->
-                // Gagal mengambil data dari Firestore, tampilkan pesan kesalahan
-                Toast.makeText(this, "Gagal mengambil data dari Firestore: ${exception.message}", Toast.LENGTH_SHORT).show()
-            }
-
-
-        editButton3.setOnClickListener{
-            val currentTime = Calendar.getInstance()
-            val startHour = currentTime.get(Calendar.HOUR_OF_DAY)
-            val startMinute = currentTime.get(Calendar.MINUTE)
-
-            TimePickerDialog(this,TimePickerDialog.OnTimeSetListener { view, hourofDay, minute ->
-                tvtime3 .setText("$hourofDay : $minute")
-            }, startHour,startMinute, true).show()
+        editButton3.setOnClickListener {
+            showTimePickerDialog(tvtime3)
         }
 
         saveButton3.setOnClickListener {
             val timeValue = tvtime3.text.toString()
-
-            // Simpan nilai tvtime ke Firestore
-            val jadwalPakanRef = firestore.collection("jadwal_pakan").document("jadwal_pakan3")
-            val data = hashMapOf("time" to timeValue)
-            Log.d("Cek",data.toString());
-
-            jadwalPakanRef.set(data)
-                .addOnSuccessListener {
-                    Toast.makeText(this, "Nilai berhasil disimpan di Firestore", Toast.LENGTH_SHORT).show()
-                }
-                .addOnFailureListener {
-                    Toast.makeText(this, "Gagal menyimpan nilai di Firestore", Toast.LENGTH_SHORT).show()
-                }
-
+            saveDataToFirebase("waktu3", timeValue)
         }
 
         val img_back = findViewById<ImageView>(R.id.img_back)
@@ -194,5 +74,50 @@ class JadwalActivity : AppCompatActivity() {
             val intent = Intent(this, ControlingActivity::class.java)
             startActivity(intent)
         }
+
+        loadDataFromFirebase("waktu", tvtime1)
+        loadDataFromFirebase("waktu2", tvtime2)
+        loadDataFromFirebase("waktu3", tvtime3)
+    }
+
+    private fun showTimePickerDialog(textView: TextView) {
+        val currentTime = Calendar.getInstance()
+        val startHour = currentTime.get(Calendar.HOUR_OF_DAY)
+        val startMinute = currentTime.get(Calendar.MINUTE)
+
+        TimePickerDialog(this, TimePickerDialog.OnTimeSetListener { _, hourOfDay, minute ->
+            val timeString = String.format(Locale.getDefault(), "%02d:%02d", hourOfDay, minute)
+            textView.text = timeString
+        }, startHour, startMinute, true).show()
+    }
+
+    private fun saveDataToFirebase(childKey: String, timeValue: String) {
+        val data = hashMapOf("time" to timeValue)
+        KontrolRef.child(childKey)
+            .setValue(data)
+            .addOnSuccessListener {
+                Toast.makeText(this, "Jadwal Pakan Berhasil Disimpan", Toast.LENGTH_SHORT).show()
+            }
+            .addOnFailureListener {
+                Toast.makeText(this, "Gagal Menyimpan Jadwal Pakan", Toast.LENGTH_SHORT).show()
+            }
+    }
+
+    private fun loadDataFromFirebase(childKey: String, textView: TextView) {
+        KontrolRef.child(childKey)
+            .get()
+            .addOnSuccessListener { dataSnapshot ->
+                val timeValue = dataSnapshot.child("time").getValue(String::class.java)
+                timeValue?.let {
+                    textView.text = it
+                }
+            }
+            .addOnFailureListener { exception ->
+                Toast.makeText(
+                    this,
+                    "Gagal mengambil data dari Firebase: ${exception.message}",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
     }
 }
