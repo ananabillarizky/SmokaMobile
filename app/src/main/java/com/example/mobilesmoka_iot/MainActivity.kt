@@ -14,7 +14,7 @@ import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseUser
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var btnbacklogin: TextView
+    private lateinit var btnbacklogin: ImageView
     private lateinit var tvHalo: TextView
 
     @SuppressLint("MissingInflatedId")

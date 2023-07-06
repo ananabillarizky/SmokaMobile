@@ -27,7 +27,7 @@
         android:src="@drawable/logo1" />
 
     <ImageView
-        android:id="@+id/btnbacklogin"
+        android:id="@+id/logout"
         android:layout_width="40dp"
         android:layout_height="48dp"
         android:layout_alignParentTop="true"
@@ -96,18 +96,6 @@
         android:layout_marginStart="220dp"
         android:layout_marginTop="100dp"
         android:src="@drawable/control" />
-    <TextView
-        android:id="@+id/logout"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/controling"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="90dp"
-        android:fontFamily="sans-serif-condensed"
-        android:text="Logout"
-        android:textColor="@color/black"
-        android:textSize="25dp"
-        android:textStyle="bold" />
+
 
 </RelativeLayout>

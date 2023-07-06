@@ -206,7 +206,7 @@
         android:textSize="14dp"
         tools:ignore="TextSizeCheck" />
     <TextView
-        android:id="@+id/txtangkamakan"
+        android:id="@+id/txtingkamakan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtmakan"
@@ -221,7 +221,7 @@
         android:id="@+id/txtmakanket"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txtangkamakan"
+        android:layout_below="@+id/txtingkamakan"
         android:layout_marginStart="244dp"
         android:layout_marginTop="5dp"
         android:fontFamily="sans-serif"
