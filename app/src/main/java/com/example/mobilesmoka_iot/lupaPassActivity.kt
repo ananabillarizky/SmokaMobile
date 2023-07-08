@@ -21,6 +21,7 @@ class lupaPassActivity : AppCompatActivity() {
     private lateinit var resetButton: Button
     private lateinit var emailET: EditText
     private lateinit var mAuth: FirebaseAuth
+    private lateinit var backBtn:ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +29,7 @@ class lupaPassActivity : AppCompatActivity() {
         setContentView(R.layout.activity_lupa_pass)
         emailET = findViewById(R.id.emailET)
         resetButton = findViewById(R.id.resetButton)
+        backBtn = findViewById(R.id.img_backlogin)
 
         resetButton.setOnClickListener {
             val email = emailET.text.toString().trim()
@@ -45,6 +47,13 @@ class lupaPassActivity : AppCompatActivity() {
             }
             val message: String? = "Apakah anda yakin ingin meresetnya?"
             showCustomDialogBox(message)
+        }
+
+
+        backBtn.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 

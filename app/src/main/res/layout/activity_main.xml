@@ -85,7 +85,7 @@
         android:layout_centerVertical="true"
         android:layout_marginStart="30dp"
         android:layout_marginTop="100dp"
-        android:src="@drawable/monitoring" />
+        android:src="@drawable/menu_monitoring" />
 
     <ImageView
         android:id="@+id/controling"
@@ -95,7 +95,7 @@
         android:layout_centerVertical="true"
         android:layout_marginStart="220dp"
         android:layout_marginTop="100dp"
-        android:src="@drawable/control" />
+        android:src="@drawable/menu_controlling" />
 
 
 </RelativeLayout>
