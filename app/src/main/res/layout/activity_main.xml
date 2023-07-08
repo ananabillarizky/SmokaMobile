@@ -77,25 +77,29 @@
         android:textColor="#FFFFFF"
         android:textSize="16dp" />
 
-    <ImageView
-        android:id="@+id/monitoring"
-        android:layout_width="170dp"
-        android:layout_height="170dp"
-        android:layout_below="@+id/imgbg1"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="100dp"
-        android:src="@drawable/menu_monitoring" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/imgbg2"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/monitoring"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:layout_below="@+id/imgbg1"
+            android:src="@drawable/menu_monitoring" />
 
-    <ImageView
-        android:id="@+id/controling"
-        android:layout_width="170dp"
-        android:layout_height="170dp"
-        android:layout_below="@+id/imgbg1"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="220dp"
-        android:layout_marginTop="100dp"
-        android:src="@drawable/menu_controlling" />
+        <ImageView
+            android:id="@+id/controling"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:layout_below="@+id/imgbg1"
+            android:src="@drawable/menu_controlling" />
+    </LinearLayout>
+
+
 
 
 </RelativeLayout>
