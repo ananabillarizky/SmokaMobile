@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#050A30"
+    tools:context=".LoginActivity"
+    tools:ignore="ExtraText">
+
+    <ImageView
+        android:id="@+id/img_logo2"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/logo2" />
+
+    <TextView
+        android:id="@+id/tv_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_logo2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/poppins"
+        android:text="Login"
+        android:textColor="@color/white"
+        android:textSize="28dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/emailET"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/poppins"
+        android:backgroundTint="#D2264C"
+        android:drawableLeft="@drawable/ic_email"
+        android:drawablePadding="8dp"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:paddingBottom="30dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#F4F7F7" />
+
+    <EditText
+        android:id="@+id/passwordET"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/emailET"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#D2264C"
+        android:fontFamily="@font/poppins"
+        android:drawableLeft="@drawable/ic_key"
+        android:drawablePadding="10dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingBottom="30dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#F4F7F7" />
+
+    <ImageView
+        android:id="@+id/IV_eye"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="310dp"
+        android:layout_marginTop="385dp"
+        android:src="@drawable/ic_eye_off" />
+
+    <TextView
+        android:id="@+id/tv_Fpassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/passwordET"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="53dp"
+        android:clickable="true"
+        android:fontFamily="@font/poppins"
+        android:text="Lupa Password?"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_Fpassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/buttonrounded"
+        android:fontFamily="@font/poppins"
+        android:text="Login"
+        android:textColor="#F4F7F7"
+        android:textSize="18dp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/loginButton"
+        android:layout_marginTop="40dp">
+
+        <TextView
+            android:id="@+id/tv_newUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Belum memiliki akun?"
+            android:fontFamily="@font/poppins"
+            android:textColor="#F4F7F7"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_toEndOf="@+id/tv_newUser"
+            android:clickable="true"
+            android:fontFamily="@font/poppins"
+            android:text="Daftar disini"
+            android:textColor="#D2264C"
+            android:textStyle="bold"
+            tools:ignore="TouchTargetSizeCheck" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#050A30"
+    tools:context=".lupaPassActivity">
+
+    <ImageView
+        android:id="@+id/img_backlogin"
+        android:layout_width="45dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_back" />
+
+    <ImageView
+        android:id="@+id/img_logo2"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/logo2" />
+
+    <TextView
+        android:id="@+id/tv_lupapass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_logo2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/poppins"
+        android:text="Lupa Password?"
+        android:textColor="@color/white"
+        android:textSize="28dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_Text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_lupapass"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="53dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Masukkan alamat email Anda di bawah ini untuk memulai proses reset password."
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppins"
+        android:textSize="14dp"
+        tools:ignore="TextSizeCheck" />
+
+    <EditText
+        android:id="@+id/emailET"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_Text1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="#D2264C"
+        android:drawableLeft="@drawable/ic_email"
+        android:fontFamily="@font/poppins"
+        android:drawablePadding="8dp"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:paddingBottom="30dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#F4F7F7" />
+
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/emailET"
+        android:fontFamily="@font/poppins"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/buttonrounded"
+        android:text="Reset"
+        android:textColor="#F4F7F7"
+        android:textSize="18dp" />
+
+</RelativeLayout>

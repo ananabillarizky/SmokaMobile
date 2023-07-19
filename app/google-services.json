@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "236584962939",
+    "project_id": "smoka-iot-a3fc3",
+    "storage_bucket": "smoka-iot-a3fc3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:236584962939:android:e3d5ca25d747e57c05cbde",
+        "android_client_info": {
+          "package_name": "com.example.mobilesmoka_iot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "236584962939-has628f50jmvoso5hpr526tsqlsrs7gh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mobilesmoka_iot",
+            "certificate_hash": "fa6917bb2f6bde257b48fe1a188de23545fb9e33"
+          }
+        },
+        {
+          "client_id": "236584962939-c6cl5f588bc9ijt59apvck6drl7ucimu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0p3zbu1Tiq3Po1tBmaPSuTZBBZZ_H2E4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "236584962939-c6cl5f588bc9ijt59apvck6drl7ucimu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

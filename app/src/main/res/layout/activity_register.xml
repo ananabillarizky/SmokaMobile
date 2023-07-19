@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#050A30"
+    tools:context=".RegisterActivity">
+
+    <ImageView
+        android:id="@+id/img_logo2"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/logo2" />
+    <TextView
+        android:id="@+id/tv_regis"
+        android:fontFamily="@font/poppins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_logo2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Register"
+        android:textColor="@color/white"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        />
+
+    <EditText
+        android:id="@+id/emailET"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_regis"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#D2264C"
+        android:drawableLeft="@drawable/ic_email"
+        android:drawablePadding="8dp"
+        android:fontFamily="@font/poppins"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:paddingBottom="30dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#F4F7F7" />
+
+    <EditText
+        android:id="@+id/passwordET"
+        android:layout_width="300dp"
+        android:fontFamily="@font/poppins"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/emailET"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#D2264C"
+        android:drawableLeft="@drawable/ic_key"
+        android:drawablePadding="8dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingBottom="30dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#F4F7F7" />
+    <ImageView
+        android:id="@+id/IV_eye1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="310dp"
+        android:layout_marginTop="350dp"
+        android:src="@drawable/ic_eye_off" />
+
+    <EditText
+        android:id="@+id/ETconfrim"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/passwordET"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#D2264C"
+        android:drawableLeft="@drawable/ic_security"
+        android:drawablePadding="8dp"
+        android:hint="Password"
+        android:fontFamily="@font/poppins"
+        android:textColor="#FFFFFF"
+        android:inputType="textPassword"
+        android:paddingBottom="30dp"
+        android:textColorHint="#F4F7F7" />
+    <ImageView
+        android:id="@+id/IV_eye2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="310dp"
+        android:layout_marginTop="420dp"
+        android:src="@drawable/ic_eye_off" />
+
+    <Button
+        android:id="@+id/btnregis"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ETconfrim"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/buttonrounded"
+        android:text="Register"
+        android:fontFamily="@font/poppins"
+        android:textColor="#F4F7F7"
+        android:textSize="18dp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/btnregis"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/tv_newUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sudah memiliki akun?"
+            android:fontFamily="@font/poppins"
+            android:textColor="#F4F7F7"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/btn_to_signIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_toEndOf="@+id/tv_newUser"
+            android:clickable="true"
+            android:fontFamily="@font/poppins"
+            android:text="Login"
+            android:textColor="#D2264C"
+            android:textStyle="bold"
+            tools:ignore="TouchTargetSizeCheck" />
+    </RelativeLayout>
+
+</RelativeLayout>

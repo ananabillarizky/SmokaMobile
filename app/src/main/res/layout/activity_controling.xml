@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F5F8"
+    tools:context=".ControlingActivity">
+
+    <ImageView
+        android:id="@+id/img_back"
+        android:layout_width="45dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/back" />
+
+    <ImageView
+        android:id="@+id/img_jam"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/clock" />
+
+    <TextView
+        android:id="@+id/tv_Text1"
+        android:layout_width="202dp"
+        android:layout_height="87dp"
+        android:layout_below="@+id/img_jam"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-20dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:fontFamily="@font/poppins"
+        android:text="“Pastikan Ikan tidak Kelaparan!”"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/BtnMakan"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_Text1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/buttonrounded"
+        android:text="Makan Sekarang"
+        android:fontFamily="@font/poppins"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp" />
+
+    <Button
+        android:id="@+id/BtnJadwal"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/BtnMakan"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/buttonrounded"
+        android:text="Jadwal"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/poppins"
+        android:textSize="18dp" />
+
+</RelativeLayout>
