@@ -1,0 +1,26 @@
+[
+  {
+    "pertanyaan": "Apa itu Smoka?",
+    "jawaban": "Smart Monitoring Kualitas Air adalah teknologi baru yang memungkinkan pemantauan kualitas air secara otomatis dan berkelanjutan. Ia menggunakan sensor untuk mendeteksi suhu, tingkat PH dan tingkat kekeruhan dalam air."
+  },
+  {
+    "pertanyaan": "Bagaimana Sejarah Ikan Koi?",
+    "jawaban": "RecyclerView adalah salah satu komponen tampilan di Android yang digunakan untuk menampilkan daftar item dalam bentuk daftar atau grid dengan cara yang efisien."
+  },
+  {
+    "pertanyaan": "Berapakah pH air yang baik untuk ikan koi?",
+    "jawaban": "Anda dapat menggunakan adapter untuk menghubungkan data ke RecyclerView. Buat data model, lalu tambahkan data tersebut ke dalam list yang diatur oleh adapter. Setelah itu, adapter akan menangani pembaruan tampilan saat data berubah."
+  },
+  {
+    "pertanyaan": "Berapakah suhu air yang baik untuk ikan koi?",
+    "jawaban": "Gson adalah pustaka (library) dari Google yang digunakan untuk melakukan parsing dan serialisasi data JSON ke objek Java/Kotlin dan sebaliknya."
+  },
+  {
+    "pertanyaan": "Pemberian makan yang baik buat ikan?",
+    "jawaban": "Anda dapat menggunakan adapter untuk menghubungkan data ke RecyclerView. Buat data model, lalu tambahkan data tersebut ke dalam list yang diatur oleh adapter. Setelah itu, adapter akan menangani pembaruan tampilan saat data berubah."
+  },
+  {
+    "pertanyaan": "Cara perawatan ikan koi",
+    "jawaban": "Anda dapat menggunakan adapter untuk menghubungkan data ke RecyclerView. Buat data model, lalu tambahkan data tersebut ke dalam list yang diatur oleh adapter. Setelah itu, adapter akan menangani pembaruan tampilan saat data berubah."
+  }
+]

@@ -19,6 +19,7 @@ class MonitoringActivity : AppCompatActivity() {
     private lateinit var txtsuhuket: TextView
     private lateinit var txtPH: TextView
     private lateinit var txtphket: TextView
+    private lateinit var txttds: TextView
     private lateinit var tdsket: TextView
     private lateinit var txtingkamakan: TextView
     private lateinit var txtmakanket: TextView
@@ -34,6 +35,7 @@ class MonitoringActivity : AppCompatActivity() {
         txtsuhuket = findViewById(R.id.txtsuhuket)
         txtPH = findViewById(R.id.txtPH)
         txtphket = findViewById(R.id.txtphket)
+        txttds = findViewById(R.id.txttds)
         tdsket = findViewById(R.id.tdsket)
         txtingkamakan = findViewById(R.id.txtingkamakan)
         txtmakanket = findViewById(R.id.txtmakanket)
@@ -50,7 +52,8 @@ class MonitoringActivity : AppCompatActivity() {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 if (dataSnapshot.hasChild("suhu")) {
                     val suhu = dataSnapshot.child("suhu").value.toString()
-                    txtC.text = suhu
+                    val suhuDenganC = "$suhu°C"
+                    txtC.text = suhuDenganC
                 }
                 if (dataSnapshot.hasChild("keteranganSuhu")) {
                     val keteranganSuhu = dataSnapshot.child("keteranganSuhu").value.toString()
@@ -64,14 +67,20 @@ class MonitoringActivity : AppCompatActivity() {
                     val keteranganpH = dataSnapshot.child("keteranganpH").value.toString()
                     txtphket.text = keteranganpH
                 }
+                if (dataSnapshot.hasChild("turbidity")) {
+                    val turbidity = dataSnapshot.child("turbidity").value.toString()
+                    txttds.text = turbidity
+                }
                 if (dataSnapshot.hasChild("keteranganTurbidity")) {
                     val keteranganTurbidity = dataSnapshot.child("keteranganTurbidity").value.toString()
                     tdsket.text = keteranganTurbidity
                 }
                 if (dataSnapshot.hasChild("jarak")) {
                     val jarak = dataSnapshot.child("jarak").value.toString()
-                    txtingkamakan.text = jarak
+                    val jarakDenganCm = "$jarak cm"
+                    txtingkamakan.text = jarakDenganCm
                 }
+
                 if (dataSnapshot.hasChild("keteranganJarak")) {
                     val keteranganJarak = dataSnapshot.child("keteranganJarak").value.toString()
                     txtmakanket.text = keteranganJarak
