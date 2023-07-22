@@ -54,7 +54,6 @@ class MonitoringActivity : AppCompatActivity() {
                     val suhu = dataSnapshot.child("suhu").value.toString()
                     val suhuDenganC = "$suhu°C"
                     txtC.text = suhuDenganC
-                    txtC.text = suhu
                 }
                 if (dataSnapshot.hasChild("keteranganSuhu")) {
                     val keteranganSuhu = dataSnapshot.child("keteranganSuhu").value.toString()

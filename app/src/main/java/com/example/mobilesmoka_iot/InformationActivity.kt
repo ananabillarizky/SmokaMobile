@@ -1,9 +1,11 @@
 package com.example.mobilesmoka_iot
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ExpandableListAdapter
 import android.widget.ExpandableListView
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 
 
@@ -34,6 +36,14 @@ class InformationActivity : AppCompatActivity() {
         expandableListView.setOnGroupClickListener { _, _, groupPosition, _ ->
             toggleGroup(groupPosition)
             true
+        }
+
+        // Back ke home atau main activity
+        val img_back = findViewById<ImageView>(R.id.img_back)
+        img_back.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 

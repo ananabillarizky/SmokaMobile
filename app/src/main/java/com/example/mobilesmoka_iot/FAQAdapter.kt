@@ -38,10 +38,10 @@ class FAQAdapter(private val faqList: List<FAQItem>) : RecyclerView.Adapter<FAQA
         holder.textViewAnswer.text = faqItem.jawaban
 
         if (faqItem.isExpanded) {
-            holder.imageViewArrow.setImageResource(R.drawable.baseline_keyboard_arrow_up_24)
+            holder.imageViewArrow.setImageResource(R.drawable.baseline_keyboard_arrow_down_24)
             holder.textViewAnswer.visibility = View.VISIBLE
         } else {
-            holder.imageViewArrow.setImageResource(R.drawable.baseline_keyboard_arrow_down_24)
+            holder.imageViewArrow.setImageResource(R.drawable.ic_baseline_keyboard_arrow_right_24)
             holder.textViewAnswer.visibility = View.GONE
         }
     }
