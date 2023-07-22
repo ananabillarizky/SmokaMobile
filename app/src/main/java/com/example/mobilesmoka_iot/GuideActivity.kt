@@ -62,3 +62,6 @@ class GuideActivity : AppCompatActivity() {
         return Gson().fromJson(jsonString, listType)
     }
 }
+
+
+

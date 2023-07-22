@@ -4,5 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="primaryColor">#D2264C</color>
     <color name="colorAccent">#D2264C</color>
+    <color name="cbgcard">#262A46</color>
 
 </resources>

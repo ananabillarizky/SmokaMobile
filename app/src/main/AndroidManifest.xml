@@ -15,14 +15,17 @@
         android:theme="@style/Theme.MobileSmokaIoT"
         tools:targetApi="31">
         <activity
-            android:name=".InformationActivity"
-            android:exported="false" />
-        <activity
             android:name=".HistoryActivity"
-            android:exported="false" />
+            android:exported="true"
+            android:theme="@style/Theme.MobileSmokaIoT.NoActionBar" />
+        <activity
+            android:name=".InformationActivity"
+            android:exported="true"
+            android:theme="@style/Theme.MobileSmokaIoT.NoActionBar" />
         <activity
             android:name=".GuideActivity"
-            android:exported="false" />
+            android:exported="true"
+            android:theme="@style/Theme.MobileSmokaIoT.NoActionBar" />
         <activity
             android:name=".JadwalActivity"
             android:exported="true"

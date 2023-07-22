@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -65,46 +66,78 @@
             android:textSize="14dp"
             tools:ignore="TextSizeCheck" />
     </LinearLayout>
+    <!-- CardView untuk Anggota -->
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewAnggota"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="8dp"
-        android:padding="20dp"
-        app:cardBackgroundColor="#262A46">
+        android:layout_marginBottom="16dp"
+        android:padding="16dp"
+        android:background="@drawable/cardview_rounded_background"> <!-- Tambahkan atribut cardCornerRadius dengan nilai 16dp -->
 
+        <!-- Isi Expandable Layout Anggota di sini -->
         <LinearLayout
+            android:id="@+id/expandLayoutAnggota"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:visibility="gone">
 
+            <!-- Item Anggota -->
+            <include layout="@layout/item_anggota" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Anggota"
-                android:textSize="18sp"
-                android:textColor="#F5F5F5" />
-
-            <ExpandableListView
-                android:id="@+id/expandableListViewAnggota"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Dosen Pembimbing"
-                android:textSize="18sp"
-                android:textColor="#F5F5F5" />
-            <ExpandableListView
-                android:id="@+id/expandableListViewDosen"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp" />
+            <!-- Item Anggota Kedua -->
+            <include layout="@layout/item_anggota" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
+    <!-- CardView untuk Dosen Pembimbing -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewDosen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cardViewAnggota"
+        android:padding="16dp"
+        android:background="@drawable/cardview_rounded_background"><!-- Tambahkan atribut cardCornerRadius dengan nilai 16dp -->
+
+        <!-- Isi Expandable Layout Dosen Pembimbing di sini -->
+        <LinearLayout
+            android:id="@+id/expandLayoutDosen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+            <!-- Item Dosen Pembimbing -->
+            <include layout="@layout/item_dosen" />
+            <!-- Item Dosen Pembimbing Kedua -->
+            <include layout="@layout/item_dosen" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Tambahkan ExpandableListView -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewExpandable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cardViewDosen"
+        android:background="@drawable/rounded_background"
+        android:orientation="vertical"
+        app:cardCornerRadius="20dp"
+        android:layout_margin="20dp"
+        android:elevation="4dp">
+        <!-- Atur elevation sesuai kebutuhan Anda untuk memberikan efek bayangan -->
+
+        <ExpandableListView
+            android:id="@+id/expandableListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:groupIndicator="@null"
+            android:dividerHeight="1dp"
+            android:background="#262A46" />
+
+    </androidx.cardview.widget.CardView>
+
+
+
 </LinearLayout>
+

@@ -54,6 +54,7 @@ class MonitoringActivity : AppCompatActivity() {
                     val suhu = dataSnapshot.child("suhu").value.toString()
                     val suhuDenganC = "$suhu°C"
                     txtC.text = suhuDenganC
+                    txtC.text = suhu
                 }
                 if (dataSnapshot.hasChild("keteranganSuhu")) {
                     val keteranganSuhu = dataSnapshot.child("keteranganSuhu").value.toString()
@@ -80,7 +81,6 @@ class MonitoringActivity : AppCompatActivity() {
                     val jarakDenganCm = "$jarak cm"
                     txtingkamakan.text = jarakDenganCm
                 }
-
                 if (dataSnapshot.hasChild("keteranganJarak")) {
                     val keteranganJarak = dataSnapshot.child("keteranganJarak").value.toString()
                     txtmakanket.text = keteranganJarak

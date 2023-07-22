@@ -7,4 +7,5 @@
         <!-- Tambahkan pilihan waktu lainnya sesuai kebutuhan -->
     </string-array>
     <string name="arrow_icon_description">Deskripsi singkat untuk icon panah</string>
+    <string name="profile_image_desc">Deskripsi Gambar Profil</string>
 </resources>
