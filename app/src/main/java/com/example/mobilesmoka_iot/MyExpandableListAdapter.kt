@@ -56,7 +56,14 @@ class MyExpandableListAdapter(
         }
 
         val title = view?.findViewById<TextView>(R.id.groupTitle)
+        val arrowIcon = view?.findViewById<ImageView>(R.id.imageViewArrow)
         title?.text = getGroup(groupPosition).toString()
+
+        if(isExpanded == true){
+            arrowIcon?.setImageResource(R.drawable.ic_baseline_keyboard_arrow_down_24_white)
+        } else{
+            arrowIcon?.setImageResource(R.drawable.ic_baseline_keyboard_arrow_right_24_white)
+        }
 
         return view!!
     }
@@ -101,8 +108,10 @@ class MyExpandableListAdapter(
     private fun getMemberImage(memberName: String): Int {
         // Assuming your member photos are named member1_photo.png and member2_photo.png
         return when (memberName) {
-            "Nama Anggota 1" -> R.drawable.hansel
-            "Nama Anggota 2" -> R.drawable.hansel
+            "Ananabilla Rizky Muhardanie" -> R.drawable.hansel
+            "Hamdan Yuwafi" -> R.drawable.profil
+            "Slamet Handoko, S.Kom., M.Kom." -> R.drawable.profil1
+            "Kuwat Santoso, S.Kom., M.Kom." -> R.drawable.profil2
             else -> R.drawable.hansel // Default photo resource for unknown members
         }
     }

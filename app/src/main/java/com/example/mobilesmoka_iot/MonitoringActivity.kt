@@ -1,18 +1,28 @@
 package com.example.mobilesmoka_iot
 
-import android.annotation.SuppressLint
+import android.app.AlarmManager
+import android.app.PendingIntent
+import android.content.BroadcastReceiver
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.work.*
+import com.example.mobilesmoka_iot.model.HistoryModel
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+import java.text.SimpleDateFormat
+import java.util.*
+import java.util.concurrent.TimeUnit
 
 class MonitoringActivity : AppCompatActivity() {
     private lateinit var txtC: TextView
@@ -25,8 +35,10 @@ class MonitoringActivity : AppCompatActivity() {
     private lateinit var txtmakanket: TextView
     private lateinit var img_back: ImageView
     private lateinit var database: DatabaseReference
+    private lateinit var historyRef : DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_monitoring)
         // Inisialisasi Firebase Database
@@ -37,6 +49,7 @@ class MonitoringActivity : AppCompatActivity() {
         txtphket = findViewById(R.id.txtphket)
         txttds = findViewById(R.id.txttds)
         tdsket = findViewById(R.id.tdsket)
+
         txtingkamakan = findViewById(R.id.txtingkamakan)
         txtmakanket = findViewById(R.id.txtmakanket)
 
@@ -45,8 +58,9 @@ class MonitoringActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
-        // Mendapatkan referensi ke node "Monitoring"
+
         val monitoringRef = database.child("Monitoring")
+        historyRef = database.child("History")
 
         val eventListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -91,7 +105,21 @@ class MonitoringActivity : AppCompatActivity() {
             }
         }
 
-        // Menambahkan event listener ke node "Monitoring"
         monitoringRef.addValueEventListener(eventListener)
+
+    }
+
+    private fun sendDataToFirebase() {
+        val timestamp = SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault()).format(Date()).toString()
+        val suhuAir = findViewById<TextView>(R.id.txtC).text.toString()
+        val pHAir = findViewById<TextView>(R.id.txtPH).text.toString()
+        val kekeruhanAir = findViewById<TextView>(R.id.txtingkamakan).text.toString()
+        val pakan = findViewById<TextView>(R.id.txttds).text.toString()
+
+        val histData = HistoryModel(timestamp, suhuAir, pHAir, kekeruhanAir, pakan)
+
+        val newDataRef = historyRef.push()
+        newDataRef.setValue(histData)
     }
 }
+
