@@ -43,6 +43,7 @@
         android:background="@drawable/bakcground_searchview"
         />
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvHistory"
         android:layout_width="match_parent"
