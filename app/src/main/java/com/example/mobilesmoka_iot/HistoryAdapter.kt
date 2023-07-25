@@ -12,6 +12,7 @@ import com.google.firebase.database.*
 class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() {
 
     private val historyList = ArrayList<HistoryModel>()
+    private val filteredHistoryList = ArrayList<HistoryModel>()
     private val databaseReference: DatabaseReference =
         FirebaseDatabase.getInstance().reference.child("History")
 
@@ -22,9 +23,12 @@ class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() 
                 historyList.clear()
                 for (dataSnapshot in snapshot.children) {
                     val historyData = dataSnapshot.getValue(HistoryModel::class.java)
-                    historyData?.let { historyList.add(it) }
-                    Log.d("CEKDATA",historyData.toString())
+                    historyData?.let {
+                        historyList.add(it)
+                    }
                 }
+                filteredHistoryList.clear()
+                filteredHistoryList.addAll(historyList) // Menyalin semua data historyList ke filteredHistoryList
                 notifyDataSetChanged()
             }
 
@@ -33,6 +37,19 @@ class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() 
             }
         })
     }
+
+    fun filterByDate(date: String) {
+        Log.d("FILTER", "Filtering by date: $date")
+        filteredHistoryList.clear()
+        for (historyData in historyList) {
+            if (historyData.timestamp.contains(date)) {
+                filteredHistoryList.add(historyData)
+            }
+        }
+        notifyDataSetChanged()
+    }
+
+
 
     inner class HistoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val tvTimestamp: TextView = itemView.findViewById(R.id.tvTimestamp)
@@ -56,13 +73,13 @@ class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() 
     }
 
     override fun onBindViewHolder(holder: HistoryViewHolder, position: Int) {
-        val currentItem = historyList[position]
+        val currentItem = filteredHistoryList[position]
         holder.bind(currentItem)
     }
 
-    override fun getItemCount(): Int {
-        return historyList.size
-    }
 
+    override fun getItemCount(): Int {
+        return filteredHistoryList.size
+    }
 
 }

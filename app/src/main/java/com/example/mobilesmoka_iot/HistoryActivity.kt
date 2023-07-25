@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -24,6 +25,18 @@ class HistoryActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
+        var svHistory = findViewById<SearchView>(R.id.svHistory)
+        svHistory.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                historyAdapter.filterByDate(newText ?: "")
+                return true
+            }
+        })
 
         recyclerView = findViewById(R.id.rvHistory)
         recyclerView.layoutManager = LinearLayoutManager(this)
