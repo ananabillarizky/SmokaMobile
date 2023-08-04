@@ -3,6 +3,7 @@ package com.example.mobilesmoka_iot
 import android.annotation.SuppressLint
 import android.app.TimePickerDialog
 import android.content.Intent
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -85,11 +86,20 @@ class JadwalActivity : AppCompatActivity() {
         val startHour = currentTime.get(Calendar.HOUR_OF_DAY)
         val startMinute = currentTime.get(Calendar.MINUTE)
 
-        TimePickerDialog(this, TimePickerDialog.OnTimeSetListener { _, hourOfDay, minute ->
-            val timeString = String.format(Locale.getDefault(), "%02d:%02d", hourOfDay, minute)
-            textView.text = timeString
-        }, startHour, startMinute, true).show()
+        val isDarkMode = (textView.context.resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES
+
+        val themeResId = if (isDarkMode) R.style.TimePickerDialogStyle else R.style.TimePickerDialogStyle
+
+        TimePickerDialog(
+            textView.context,
+            themeResId, // Use the custom style based on the current mode
+            TimePickerDialog.OnTimeSetListener { _, hourOfDay, minute ->
+                val timeString = String.format(Locale.getDefault(), "%02d:%02d", hourOfDay, minute)
+                textView.text = timeString
+            }, startHour, startMinute, true
+        ).show()
     }
+
 
     private fun saveDataToFirebase(childKey: String, timeValue: String) {
         val data = hashMapOf("time" to timeValue)

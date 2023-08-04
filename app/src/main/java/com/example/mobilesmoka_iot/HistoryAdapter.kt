@@ -42,7 +42,7 @@ class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() 
         Log.d("FILTER", "Filtering by date: $date")
         filteredHistoryList.clear()
         for (historyData in historyList) {
-            if (historyData.timestamp.contains(date)) {
+            if (historyData.datetime.contains(date)) {
                 filteredHistoryList.add(historyData)
             }
         }
@@ -59,11 +59,11 @@ class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() 
         private val tvPakan: TextView = itemView.findViewById(R.id.tvPakan)
 
         fun bind(historyData: HistoryModel) {
-            tvTimestamp.text = historyData.timestamp
-            tvSuhuAir.text = historyData.suhuAir
-            tvPhAir.text = historyData.phair
-            tvKekeruhanAir.text = historyData.kekeruhanAir
-            tvPakan.text = historyData.pakan
+            tvTimestamp.text = historyData.datetime
+            tvSuhuAir.text = "${historyData.suhu} (${historyData.keteranganSuhu})"
+            tvPhAir.text = "${historyData.ph} (${historyData.keteranganpH})"
+            tvKekeruhanAir.text = historyData.keteranganTurbidity
+            tvPakan.text = historyData.keteranganJarak
         }
     }
 
@@ -73,7 +73,8 @@ class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() 
     }
 
     override fun onBindViewHolder(holder: HistoryViewHolder, position: Int) {
-        val currentItem = filteredHistoryList[position]
+        val sortedList = filteredHistoryList.sortedByDescending { it.datetime }
+        val currentItem = sortedList[position]
         holder.bind(currentItem)
     }
 

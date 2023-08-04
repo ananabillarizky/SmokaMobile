@@ -108,10 +108,10 @@ class MyExpandableListAdapter(
     private fun getMemberImage(memberName: String): Int {
         // Assuming your member photos are named member1_photo.png and member2_photo.png
         return when (memberName) {
-            "Ananabilla Rizky Muhardanie" -> R.drawable.hansel
-            "Hamdan Yuwafi" -> R.drawable.profil
-            "Slamet Handoko, S.Kom., M.Kom." -> R.drawable.profil1
-            "Kuwat Santoso, S.Kom., M.Kom." -> R.drawable.profil2
+            "Ananabilla Rizky Muhardanie" -> R.drawable.bila
+            "Hamdan Yuwafi" -> R.drawable.hamdan
+            "Slamet Handoko, S.Kom., M.Kom." -> R.drawable.pak_handoko
+            "Kuwat Santoso, S.Kom., M.Kom." -> R.drawable.pak_kuwat
             else -> R.drawable.hansel // Default photo resource for unknown members
         }
     }

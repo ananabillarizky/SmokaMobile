@@ -15,6 +15,13 @@
         android:theme="@style/Theme.MobileSmokaIoT"
         tools:targetApi="31">
         <activity
+            android:name=".GrafikHistoryActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".HistoryActivity"
             android:exported="true"
             android:theme="@style/Theme.MobileSmokaIoT.NoActionBar" />

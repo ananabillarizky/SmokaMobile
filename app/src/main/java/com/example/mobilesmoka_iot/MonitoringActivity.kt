@@ -106,21 +106,21 @@ class MonitoringActivity : AppCompatActivity() {
 
         monitoringRef.addValueEventListener(eventListener)
 
-        sendDataToFirebase()
+//        sendDataToFirebase()
 
     }
 
-    fun sendDataToFirebase() {
-        val timestamp = SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault()).format(Date()).toString()
-        val suhuAir = findViewById<TextView>(R.id.txtC).text.toString() +" ("+ findViewById<TextView>(R.id.txtsuhuket).text.toString() +")"
-        val pHAir = findViewById<TextView>(R.id.txtPH).text.toString() +" ("+ findViewById<TextView>(R.id.txtphket).text.toString() +")"
-        val kekeruhanAir = findViewById<TextView>(R.id.tdsket).text.toString()
-        val pakan = findViewById<TextView>(R.id.txtmakanket).text.toString()
-
-        val histData = HistoryModel(timestamp, suhuAir, pHAir, kekeruhanAir, pakan)
-
-        val newDataRef = historyRef.push()
-        newDataRef.setValue(histData)
-    }
+//    fun sendDataToFirebase() {
+//        val timestamp = SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault()).format(Date()).toString()
+//        val suhuAir = findViewById<TextView>(R.id.txtC).text.toString() +" ("+ findViewById<TextView>(R.id.txtsuhuket).text.toString() +")"
+//        val pHAir = findViewById<TextView>(R.id.txtPH).text.toString() +" ("+ findViewById<TextView>(R.id.txtphket).text.toString() +")"
+//        val kekeruhanAir = findViewById<TextView>(R.id.tdsket).text.toString()
+//        val pakan = findViewById<TextView>(R.id.txtmakanket).text.toString()
+//
+//        val histData = HistoryModel(timestamp, suhuAir, pHAir, kekeruhanAir, pakan)
+//
+//        val newDataRef = historyRef.push()
+//        newDataRef.setValue(histData)
+//    }
 }
 
